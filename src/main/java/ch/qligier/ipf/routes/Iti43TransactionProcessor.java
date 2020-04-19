@@ -1,6 +1,5 @@
 package ch.qligier.ipf.routes;
 
-import com.sun.istack.ByteArrayDataSource;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.openehealth.ipf.commons.ihe.xds.core.requests.DocumentReference;
@@ -11,7 +10,6 @@ import org.openehealth.ipf.commons.ihe.xds.core.responses.Status;
 import org.springframework.stereotype.Component;
 
 import javax.activation.DataHandler;
-import javax.activation.DataSource;
 
 
 /**
@@ -38,11 +36,10 @@ public class Iti43TransactionProcessor {
         final RetrievedDocument retrievedDocument = new RetrievedDocument();
         retrievedDocument.setMimeType("text/xml");
         retrievedDocument.setRequestData(request.getDocuments().get(0));
-        final DataSource dataSource = new ByteArrayDataSource(
-            "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Document></Document>".getBytes(),
+        retrievedDocument.setDataHandler(new DataHandler(
+            "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Document></Document>",
             "text/xml; charset=UTF-8"
-        );
-        retrievedDocument.setDataHandler(new DataHandler(dataSource));
+        ));
 
         // Create a successful response
         final RetrievedDocumentSet response = new RetrievedDocumentSet();
