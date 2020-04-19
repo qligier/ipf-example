@@ -15,6 +15,8 @@ import javax.activation.DataHandler;
 /**
  * The example processor of ITI-43 transactions: Retrieve Document Set.
  *
+ * See <a href="https://oehf.github.io/ipf-docs/docs/ihe/iti43/">xds-iti43 component</a>
+ *
  * @author Quentin Ligier
  */
 @Component

@@ -35,7 +35,7 @@ public class Iti43RouteBuilder extends SpringRouteBuilder {
     private final Iti43TransactionProcessor iti43TransactionProcessor;
 
     /**
-     * Constructor.
+     * Constructor. All dependencies will be autowired by Spring but could also be supplied manually.
      *
      * @param iti43TransactionProcessor The processor for ITI-43 transactions.
      */
@@ -50,11 +50,15 @@ public class Iti43RouteBuilder extends SpringRouteBuilder {
      */
     @Override
     public void configure() throws Exception {
+        // Here we configure the Camel route as an ITI-43 endpoint (before the colon) and we set the HTTP path (after the colon)
         from(String.format("%s:%s", CAMEL_SCHEME, HTTP_PATH)).process(
             (final Exchange exchange) -> {
                 log.info("Received an ITI-43 request");
                 exchange.setPattern(ExchangePattern.InOnly); // Sets the Camel message in the correct mode
 
+                // The type of the objects to retrieve from the Camel message and to put back as a response depends on the transaction and
+                // can be found in IPF's doc:
+                // https://oehf.github.io/ipf-docs/docs/ihe/xdsMessageTypes/
                 final RetrieveDocumentSet request = exchange.getMessage().getBody(RetrieveDocumentSet.class);
                 RetrievedDocumentSet retrievedDocumentSet;
                 try {

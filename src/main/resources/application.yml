@@ -12,5 +12,6 @@ webapp:
     prefix: /services/*
 ipf:
   atna:
-    # Disable ATNA logging as it requires more efforts
+    # Disable ATNA logging as it requires more efforts to work
+    # See: https://oehf.github.io/ipf-docs/docs/ihe/atna/
     audit-enabled: false
