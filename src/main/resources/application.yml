@@ -1,15 +1,19 @@
 # General configuration of the IPF application.
 
+# https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#core-properties
 spring:
   application:
     name: ipf-example
+
+# https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#server-properties
 server:
-  # Application listening port
-  port: 8080
+  port: 8080 # Application listening port
+
+# https://oehf.github.io/ipf-docs/docs/boot-xds/
 cxf:
   path: /services # HTTP prefix of all routes
+
 ipf:
+  # https://oehf.github.io/ipf-docs/docs/ihe/atna/
   atna:
-    # Disable ATNA logging as it requires more efforts to work
-    # See: https://oehf.github.io/ipf-docs/docs/ihe/atna/
-    audit-enabled: false
+    audit-enabled: false # Disable ATNA logging as it requires more efforts to work
