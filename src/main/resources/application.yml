@@ -6,10 +6,8 @@ spring:
 server:
   # Application listening port
   port: 8080
-webapp:
-  api:
-    # HTTP prefix of all routes
-    prefix: /services/*
+cxf:
+  path: /services # HTTP prefix of all routes
 ipf:
   atna:
     # Disable ATNA logging as it requires more efforts to work
