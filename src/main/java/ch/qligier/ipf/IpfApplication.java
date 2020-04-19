@@ -25,7 +25,7 @@ public class IpfApplication extends SpringBootServletInitializer {
      * @param args The list of CLI parameters.
      */
     public static void main(final String[] args) {
-        log.info("Configuring IPF app for a traditional JAR deployment");
+        log.info("Configuring IPF app for a JAR deployment");
         final SpringApplication application = new SpringApplication(IpfApplication.class);
         addApplicationStartupHook(application);
         application.run(args);
@@ -39,7 +39,7 @@ public class IpfApplication extends SpringBootServletInitializer {
      */
     @Override
     protected SpringApplicationBuilder configure(final SpringApplicationBuilder builder) {
-        log.info("Configuring IPF app for a traditional WAR deployment");
+        log.info("Configuring IPF app for a WAR deployment");
         addApplicationStartupHook(builder.application());
         return builder.sources(IpfApplication.class);
     }
