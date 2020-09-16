@@ -18,9 +18,9 @@
         <maven.compiler.target>1.11</maven.compiler.target>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
 
-        <spring-boot-version>2.1.13.RELEASE</spring-boot-version>
-        <ipf-version>3.7-20200306</ipf-version>
-        <camel-version>2.25.0</camel-version>
+        <spring-boot-version>2.3.3.RELEASE</spring-boot-version>
+        <ipf-version>4.0-20200713</ipf-version>
+        <camel-version>3.4.3</camel-version>
     </properties>
 
     <dependencyManagement>
@@ -41,6 +41,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring-boot-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
             <version>${spring-boot-version}</version>
         </dependency>
 

@@ -2,8 +2,7 @@ package ch.qligier.ipf.routes;
 
 import lombok.NonNull;
 import org.apache.camel.Exchange;
-import org.apache.camel.ExchangePattern;
-import org.apache.camel.spring.SpringRouteBuilder;
+import org.apache.camel.builder.RouteBuilder;
 import org.openehealth.ipf.commons.ihe.xds.core.requests.RetrieveDocumentSet;
 import org.openehealth.ipf.commons.ihe.xds.core.responses.*;
 import org.springframework.stereotype.Component;
@@ -17,7 +16,7 @@ import org.springframework.stereotype.Component;
  * @author Quentin Ligier
  */
 @Component
-public class Iti43RouteBuilder extends SpringRouteBuilder {
+public class Iti43RouteBuilder extends RouteBuilder {
 
     /**
      * The Camel scheme, as defined by IPF.
@@ -54,7 +53,6 @@ public class Iti43RouteBuilder extends SpringRouteBuilder {
         from(String.format("%s:%s", CAMEL_SCHEME, HTTP_PATH)).process(
             (final Exchange exchange) -> {
                 log.info("Received an ITI-43 request");
-                exchange.setPattern(ExchangePattern.InOnly); // Sets the Camel message in the correct mode
 
                 // The type of the objects to retrieve from the Camel message and to put back as a response depends on the transaction and
                 // can be found in IPF's doc:
@@ -74,7 +72,6 @@ public class Iti43RouteBuilder extends SpringRouteBuilder {
                         null
                     ));
                     exchange.getMessage().setBody(retrievedDocumentSet);
-                    exchange.getMessage().setFault(true);
                     return;
                 }
 
