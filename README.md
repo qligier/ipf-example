@@ -3,7 +3,7 @@
 This is a simple IPF example application. It does not use any Groovy code or XML configuration files for Camel, everything is done in Java
 code and in a single YAML file for the Spring Boot configuration.
 
-It exposes a single ITI-43 endpoint that always returns the same document as an example.
+It exposes a single XDS ITI-43 endpoint that always returns the same document as an example, and an XDS ITI-41 endpoint that always reports success.
 
 ## Build the WAR
 
