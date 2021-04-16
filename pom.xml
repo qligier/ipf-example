@@ -6,7 +6,7 @@
 
     <groupId>ch.qligier</groupId>
     <artifactId>ipf-example</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <description>IPF Example application</description>
 
     <packaging>war</packaging>
@@ -18,9 +18,9 @@
         <maven.compiler.target>1.11</maven.compiler.target>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
 
-        <spring-boot-version>2.3.3.RELEASE</spring-boot-version>
-        <ipf-version>4.0-20200713</ipf-version>
-        <camel-version>3.4.3</camel-version>
+        <ipf-version>4.0.0</ipf-version>
+        <spring-boot-version>2.4.3</spring-boot-version>
+        <camel-version>3.7.3</camel-version>
     </properties>
 
     <dependencyManagement>
@@ -60,17 +60,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>org.openehealth.ipf.modules</groupId>
-            <artifactId>ipf-modules-cda-mdht</artifactId>
-        </dependency>
 
         <!-- Development tools -->
         <dependency>
             <!-- Project Lombok is a boilerplate code remover and space saver that generates code -->
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+            <version>1.18.20</version>
             <scope>provided</scope>
         </dependency>
 
@@ -121,7 +117,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.3.1</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
