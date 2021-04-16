@@ -1,6 +1,7 @@
 package ch.qligier.ipf;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -16,8 +17,8 @@ import org.springframework.context.ApplicationListener;
  * @author Quentin Ligier
  */
 @SpringBootApplication
-@Slf4j
 public class IpfApplication extends SpringBootServletInitializer {
+    private static final Logger log = LoggerFactory.getLogger(IpfApplication.class);
 
     /**
      * Entry point of the IPF application when running as a JAR (e.g. in IntelliJ IDEA).

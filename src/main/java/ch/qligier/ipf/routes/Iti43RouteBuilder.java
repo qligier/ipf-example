@@ -1,6 +1,5 @@
 package ch.qligier.ipf.routes;
 
-import lombok.NonNull;
 import org.apache.camel.Exchange;
 import org.apache.camel.builder.RouteBuilder;
 import org.openehealth.ipf.commons.ihe.xds.core.requests.RetrieveDocumentSet;
@@ -38,7 +37,7 @@ public class Iti43RouteBuilder extends RouteBuilder {
      *
      * @param iti43TransactionProcessor The processor for ITI-43 transactions.
      */
-    public Iti43RouteBuilder(@NonNull final Iti43TransactionProcessor iti43TransactionProcessor) {
+    public Iti43RouteBuilder(final Iti43TransactionProcessor iti43TransactionProcessor) {
         this.iti43TransactionProcessor = iti43TransactionProcessor;
     }
 

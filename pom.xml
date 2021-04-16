@@ -60,47 +60,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!-- Development tools -->
-        <dependency>
-            <!-- Project Lombok is a boilerplate code remover and space saver that generates code -->
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- Tests -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-test</artifactId>
-            <version>${camel-version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-test-spring</artifactId>
-            <version>${camel-version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
-
-    <repositories>
-        <!-- Source for the 'org.openhealthtools.mdht.cda:org.openhealthtools.mdht.uml.cda' package -->
-        <repository>
-            <id>projects.suisse-open-exchange.healthcare-rel</id>
-            <name>projects.suisse-open-exchange.healthcare-releases</name>
-            <url>https://projects.suisse-open-exchange.healthcare/artifactory/releases</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <build>
         <finalName>${project.artifactId}</finalName>

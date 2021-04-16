@@ -1,12 +1,12 @@
 package ch.qligier.ipf.routes;
 
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
 import org.openehealth.ipf.commons.ihe.xds.core.requests.DocumentReference;
 import org.openehealth.ipf.commons.ihe.xds.core.requests.RetrieveDocumentSet;
 import org.openehealth.ipf.commons.ihe.xds.core.responses.RetrievedDocument;
 import org.openehealth.ipf.commons.ihe.xds.core.responses.RetrievedDocumentSet;
 import org.openehealth.ipf.commons.ihe.xds.core.responses.Status;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.activation.DataHandler;
@@ -20,8 +20,8 @@ import javax.activation.DataHandler;
  * @author Quentin Ligier
  */
 @Component
-@Slf4j
 public class Iti43TransactionProcessor {
+    private static final Logger log = LoggerFactory.getLogger(Iti43TransactionProcessor.class);
 
     /**
      * Processes the ITI-43 transaction.
@@ -29,7 +29,7 @@ public class Iti43TransactionProcessor {
      * @param request The ITI-43 request.
      * @return The processing result as a set of retrieved results.
      */
-    RetrievedDocumentSet process(@NonNull final RetrieveDocumentSet request) {
+    RetrievedDocumentSet process(final RetrieveDocumentSet request) {
         for (final DocumentReference documentReference : request.getDocuments()) {
             log.info("Requested document reference: {}", documentReference);
         }
