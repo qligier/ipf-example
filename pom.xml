@@ -19,7 +19,7 @@
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
 
         <ipf-version>4.0.0</ipf-version>
-        <spring-boot-version>2.4.3</spring-boot-version>
+        <spring-boot-version>2.5.8</spring-boot-version>
         <camel-version>3.7.3</camel-version>
     </properties>
 
